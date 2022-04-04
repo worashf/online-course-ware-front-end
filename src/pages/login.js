@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input,Button } from 'antd';
+import axios from 'axios';
 import PageContainer from '../components/pageContaner';
 const form_div = {
     "background": "#6e6859 ",
@@ -8,9 +9,33 @@ const form_div = {
     "height":"90vh"
 }
 const Login = () => {
+    const [data,setData] = useState(null);
+   
+  
+ const handleLoginSubmit =async(e) =>{
+    e.preventDefault(); 
+    const params = new URLSearchParams();
+
+    const {userName,password} = data;
+   console.log(data)
+   params.append("userName",userName);
+   params.append("password",password);
+
+      const response = await axios.post("http://localhost:8080/api/login",params, { headers: {
+        
+      'Content-Type': 'application/x-www-form-urlencoded',
+      }});
+
+      localStorage.setItem("token",response.data.access_token)
+     
+
+
+ }
+
+
     return (
         <PageContainer>
-            <Form style={form_div}
+            <Form style={form_div} 
                 name="basic"
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 8 }}
@@ -23,7 +48,12 @@ const Login = () => {
                     name="User name"
                     rules={[{ required: true, message: 'Please input your user name' }]}
                 >
-                    <Input  placeholder='Enter user name' />
+                    <Input  placeholder='Enter user name'  value={data?.userName}  
+                    onChange={(e) => {
+                        setData((pre) => {
+                         return { ...pre, userName: e.target.value };
+                        });
+                      }} />
                 </Form.Item>
 
                 <Form.Item
@@ -31,13 +61,18 @@ const Login = () => {
                     name="Password"
                     rules={[{ required: true, message: 'Please input your password' }]}
                 >
-                    <Input.Password  placeholder='Enter your password' />
+                    <Input.Password  placeholder='Enter your password' value={data?.password}
+                 onChange={(e) => {
+                    setData((pre) => {
+                     return { ...pre, password: e.target.value };
+                    });
+                  }} />
                 </Form.Item>
 
 
 
                 <Form.Item wrapperCol={{ offset: 8, span: 10 }}>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" onClick={handleLoginSubmit}>
                         Submit
                     </Button>
                 </Form.Item>

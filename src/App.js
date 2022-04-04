@@ -4,6 +4,8 @@ import AdminCourse from './pages/adminCourse';
 import Home from './pages/home';
 import Login from './pages/login';
 import Signup from './pages/signUp';
+import AdminUser from './pages/adminUsers';
+import TeacherCoursePage from './pages/TeacherCourse';
 import  {  BrowserRouter as Router,
   Routes,
   Route,
@@ -24,6 +26,12 @@ function App() {
          
          </Route>
           <Route path="/course" element={<AdminCourse/>}>
+         
+         </Route>
+         <Route path="/user" element={<AdminUser/>}>
+         
+         </Route>
+         <Route path="/teacher-course" element={<TeacherCoursePage/>}>
          
          </Route>
          <Route path="/login" element={<Login/>}>

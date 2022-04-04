@@ -1,8 +1,10 @@
 import React from 'react';
 import {Menu ,Row,Col} from 'antd'
 import { Link } from 'react-router-dom';
-import './nav.css'
-import {HomeOutlined,DownCircleOutlined , LoginOutlined,AntDesignOutlined  } from '@ant-design/icons'
+
+import {HomeOutlined,DownCircleOutlined , 
+  LoginOutlined,AntDesignOutlined,UserAddOutlined,
+  UserOutlined ,UpCircleOutlined   } from '@ant-design/icons'
 
 
 const NavBar = () => {
@@ -14,21 +16,31 @@ const NavBar = () => {
        <Link to ="/">E-course</Link> 
      </h1>
      </Col>
-     <Col sm ={24} md ={12} lg ={12}>
+     <Col sm ={24} md ={16} lg ={16}>
      <Menu  mode="horizontal" theme ="dark" className="menu">
             <Menu.Item key="/" className="menu-item" icon={<HomeOutlined style={ {color:"#fff",fontSize:20}}/>} >
             <Link to="/category" className="menu-link" >Course Categories</Link>
             </Menu.Item>
-            <Menu.Item key="course" className="menu-item" icon ={<AntDesignOutlined  style={ {color:"#fff",fontSize:30}} />}>
+            <Menu.Item key="course" className="menu-item" icon ={<AntDesignOutlined  style={ {color:"#fff",fontSize:20}} />}>
             <Link to="/course"  className="menu-link" >Courses</Link>
             </Menu.Item>
-
-          
-
+           
+            <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
+            <Link to="/user"  className="menu-link" >Users</Link>
+            </Menu.Item>
+            <Menu.Item key="user" className="menu-item" icon ={<UpCircleOutlined  style={ {color:"#fff",fontSize:20}} />}>
+            <Link to="/user"  className="menu-link" >Your Course</Link>
+            </Menu.Item>
+            <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
+            <Link to="/user"  className="menu-link" >Question</Link>
+            </Menu.Item>
+            <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
+            <Link to="/user"  className="menu-link" >Assesment</Link>
+            </Menu.Item>
   
 </Menu>
 </Col>
-<Col sm ={24} md ={8} lg ={8}>
+<Col sm ={24} md ={4} lg ={4}>
 <Menu  mode="horizontal" theme ="dark" className="menu">
             <Menu.Item key="login" className="menu-item" icon={<LoginOutlined  style={ {color:"#fff",fontSize:20}}/>} >
             <Link to="/login" className="menu-link" >Login</Link>

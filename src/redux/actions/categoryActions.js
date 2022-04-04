@@ -1,6 +1,6 @@
 import { categoryConstants } from  "../constants/constantType"
 import axios from 'axios'
-
+ const token = localStorage.getItem("token");
 export const addCategory = (category) => async dispatch => {
     try {
         const response = await axios.post("/api/categories", category);
@@ -15,7 +15,7 @@ export const addCategory = (category) => async dispatch => {
 }
 export const listCategories = () => async dispatch => {
     try {
-        const response =  await axios.get("/api/categories")
+        const response =  await axios.get("/api/categories",{ headers: {"Authorization" : `Bearer ${token}`} })
         console.log(response)
         dispatch({ type: categoryConstants.LIST_CATEGORIES, payload: response.data })
     }
