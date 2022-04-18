@@ -1,9 +1,10 @@
 import { roleConstants } from  "../constants/constantType"
 import axios from 'axios'
 
+const token=localStorage.getItem("token")
 export const addRole = (role) => async dispatch => {
     try {
-        const response = await axios.post("/api/roles",role);
+        const response = await axios.post("http://localhost:8080/api/roles",role, {headers: {"Authorization" : `Bearer ${token}`}});
         if (response.data) {
             dispatch({ type: roleConstants.ADD_ROLE, payload: response.data })
         }
@@ -15,7 +16,7 @@ export const addRole = (role) => async dispatch => {
 }
 export const listRoles = () => async dispatch => {
     try {
-        const response =  await axios.get("/api/roles")
+        const response =  await axios.get("http://localhost:8080/api/roles",{headers: {"Authorization" : `Bearer ${token}`}});
         console.log(response)
         dispatch({ type: roleConstants.LIST_ROLES, payload: response.data })
     }
@@ -29,7 +30,7 @@ export const deleteRole = (role) => async dispatch => {
     try {
         const { roleId } = role;
         
-        const reponse = await axios.delete(`/api/roles/${roleId}`);
+        const reponse = await axios.delete(`http://localhost:8080/api/roles/${roleId}`, {headers: {"Authorization" : `Bearer ${token}`}});
         dispatch({type:roleConstants.DELETE_ROLE,payload:roleId})
     }
     catch (err) {

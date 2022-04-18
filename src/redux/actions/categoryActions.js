@@ -3,7 +3,7 @@ import axios from 'axios'
  const token = localStorage.getItem("token");
 export const addCategory = (category) => async dispatch => {
     try {
-        const response = await axios.post("/api/categories", category);
+        const response = await axios.post("/api/categories", category,{ headers: {"Authorization" : `Bearer ${token}`} });
         if (response.data) {
             dispatch({ type: categoryConstants.ADD_CATEGOTY, payload: response.data })
         }

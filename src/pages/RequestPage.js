@@ -2,15 +2,16 @@
 import React from 'react';
 
 import PageContainer from '../components/pageContaner';
-import HomeComponent from '../components/homeComponent';
-const Home =() =>{
+import RequestGrid from '../components/requestGrid';
+
+const RequestPage =() =>{
 
     
 return (
     <PageContainer>
-    <HomeComponent/>
+    <RequestGrid/>
     </PageContainer>
 )
 
 }
-export default Home;
+export default RequestPage;

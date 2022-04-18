@@ -1,18 +1,15 @@
 import React,{useEffect} from 'react'
 import {Menu ,Row,Col} from 'antd'
-import { useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
-import { listCategories } from '../../redux/actions/categoryActions';
-import {HomeOutlined,DownCircleOutlined , 
-  LoginOutlined,AntDesignOutlined,UserAddOutlined,
-  UserOutlined ,UpCircleOutlined   } from '@ant-design/icons'
 
-/**
-* @author
-* @function 
-**/
+import {
+  AntDesignOutlined,UserAddOutlined,
+  UpCircleOutlined   } from '@ant-design/icons'
 
-export const TeacherNavbar = (props) => {
+
+
+export const StudentNavbar = () => {
 
   
   
@@ -27,8 +24,8 @@ export const TeacherNavbar = (props) => {
     <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
     <Link to="/user"  className="menu-link" >Question</Link>
     </Menu.Item>
-    <Menu.Item key="admin" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
-    <Link to="/admin"  className="menu-link" >Assesment</Link>
+    <Menu.Item key="user1" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
+    <Link to="/user1"  className="menu-link" >Assesment</Link>
     </Menu.Item>      
    </Menu>
    )

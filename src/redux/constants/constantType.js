@@ -22,5 +22,19 @@ export const userConstants ={
    
 DELETE_USER:"DELETE_USER",
 UPDATE_USER:"UPDATE_USER",
-LIST_USERS:"LIST_USERS"
+LIST_USERS:"LIST_USERS",
+
 }
+
+export const requestConstants ={
+    ADD_REQUEST:"ADD_REQUEST",
+    DELETE_REQUEST:"DELETE_REQUEST",
+    UPDATE_REQUEST:"UPDATE_REQUEST",
+    LIST_REQUESTS:"LIST_REQUESTS"
+    }
+    export const topicConstants ={
+        ADD_TOPIC:"ADD_TOPIC",
+        DELETE_TOPIC:"DELETE_TOPIC",
+        UPDATE_TOPIC:"UPDATE_TOPIC",
+        LIST_TOPICS:"LIST_TOPICS"
+    }

@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { checkTokenAsync } from '../../redux/users/actions/current.user.action'
 import { AdminNavbar } from './admin.navbar'
 import NavBarContainer from './navbar.container'
-import { TeacherNavbar } from './teacher.navbar'
+import { TeacherNavbar } from './teacher.navbar';
+import { StudentNavbar } from './student.navbar'
 
 /**
 * @author
@@ -13,35 +14,31 @@ import { TeacherNavbar } from './teacher.navbar'
 
  const Navbar = (props) => {
     const navigate= useNavigate()
-    const [state,setState]=useState({
-      laoding:true
-    })
     const currentUser=useSelector(state=> state.users.currentUser)
+
     const dispatch=useDispatch()
     useEffect(()=>{
     let token=localStorage.getItem('token')
     if(!token){
-      navigate('/login')
+      navigate('/')
     }
     else {
       dispatch(checkTokenAsync(token))
-      if(currentUser){
-        setState({laoding:false})
-      }
-      else {
-        navigate('/login')
-      }
     }
    
-     },[currentUser,dispatch])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+     },[])
+     console.log(currentUser)
   return(
       <NavBarContainer>
     {  
-    state.laoding? <></>:
+    !currentUser? <></>:
       currentUser.role=== "Admin"?
       <AdminNavbar/>:
       currentUser.role === "Teacher"?
       <TeacherNavbar/>:
+      currentUser.role === "Student"?
+      <StudentNavbar/>:
       <></>
       }
       </NavBarContainer>

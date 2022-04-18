@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Form, Input,Button } from 'antd';
 import axios from 'axios';
+import { useDispatch} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { listCategories } from '../redux/actions/categoryActions';
 import PageContainer from '../components/pageContaner';
 const form_div = {
     "background": "#6e6859 ",
@@ -10,8 +13,9 @@ const form_div = {
 }
 const Login = () => {
     const [data,setData] = useState(null);
-   
+    const navigate = useNavigate()
   
+
  const handleLoginSubmit =async(e) =>{
     e.preventDefault(); 
     const params = new URLSearchParams();
@@ -28,7 +32,7 @@ const Login = () => {
 
       localStorage.setItem("token",response.data.access_token)
      
-
+      navigate("/home")
 
  }
 

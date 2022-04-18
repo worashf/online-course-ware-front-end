@@ -1,0 +1,45 @@
+.course-title{
+
+  background: #fff;
+
+  margin: 10px 20px;
+}
+.course-objective{
+
+    background: #fff;
+    
+    margin: 10px 20px;
+
+}
+.table-content{
+    margin: 10px 5%;
+
+}
+.video-link{
+    display: flex;
+    
+}
+.video-link h5{
+   font-size: 15px;
+    color: rgb(3, 11, 121);
+}
+.video-link h5:hover{
+    font-size: 17px;
+     color: rgb(6, 85, 160);
+ }
+.course-requirement{
+    border: 1px solid #cfdbdb;
+
+   margin: 20px 5%;
+   padding: 20px 30px;
+}
+.description{
+    border: 1px solid #cfdbdb;
+
+    margin: 20px 5%;
+    padding: 20px 30px;
+}
+.comment{
+    border: 1px solid #cfdbdb;
+    height: 100px;
+}

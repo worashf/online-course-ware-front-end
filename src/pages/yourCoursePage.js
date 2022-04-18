@@ -2,15 +2,16 @@
 import React from 'react';
 
 import PageContainer from '../components/pageContaner';
-import HomeComponent from '../components/homeComponent';
-const Home =() =>{
+import YourCourse from '../components/yourCourse';
+
+const YourCoursePage =() =>{
 
     
 return (
     <PageContainer>
-    <HomeComponent/>
+  <YourCourse/>
     </PageContainer>
 )
 
 }
-export default Home;
+export default YourCoursePage;

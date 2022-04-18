@@ -2,15 +2,16 @@
 import React from 'react';
 
 import PageContainer from '../components/pageContaner';
-import HomeComponent from '../components/homeComponent';
-const Home =() =>{
+import VideoDetail from '../components/video/videoDetail';
+
+const VideoPage =() =>{
 
     
 return (
     <PageContainer>
-    <HomeComponent/>
+    <VideoDetail/>
     </PageContainer>
 )
 
 }
-export default Home;
+export default VideoPage;
