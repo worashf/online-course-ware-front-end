@@ -11,6 +11,7 @@ import YourCoursePage from './pages/yourCoursePage';
 import CourseDetailPage from './pages/course/courseDetailPage';
 import AdminSignup from './pages/adminSignup';
 import VideoPage from './pages/videoPage';
+import QuestionPage from './pages/QuestionPage';
 import  {  BrowserRouter as Router,
   Routes,
   Route,
@@ -62,7 +63,9 @@ function App() {
          <Route path={`/video-detail/:courseId/:videoId`} element={<VideoPage/>}>
          
          </Route>
-       
+         <Route path="/question" element={<QuestionPage/>}>
+         
+         </Route>
         </Routes>
         </Router>
     </div>
