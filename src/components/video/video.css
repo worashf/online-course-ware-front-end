@@ -2,8 +2,13 @@
 
 }
 .course-material{
-
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+   
 }
 .video{
-
+ border: 2px solid rgb(136, 129, 129);
+ margin-left: 20px;
+ margin-right: 20px;
+ padding: 10px;
 }
