@@ -50,6 +50,9 @@ const YourCourse= () => {
   const [videoTitle,setVideoTitle] =useState("");
   const [isVideoUpload,setIsVideoUpload] =useState(false);
   const [materialId,setMaterialId] =useState("")
+   /// ** Question category **/
+   const [questionCategory, setQuestionCategory] =useState(null)
+   const [isAddquestionCategory ,setIsAddquestionCategory] =useState(false);
 
    const currentUser=useSelector(state=> state.users.currentUser)
  
@@ -225,6 +228,24 @@ const resetVideoUpload =() =>{
     setIsVideoUpload(false);
     setMaterialId("");
 }
+
+const handleAddQuestionCategory =(editCourse) =>{
+    const {courseId} =editCourse;
+    setCourseId(courseId)
+    isAddquestionCategory(true)
+}
+
+const resetAddQuestionCategory =()=>{
+    setIsAddquestionCategory(false);
+    setQuestionCategory(null)
+}
+
+const CreateQuestionCategory =async()=>{
+    const response = await axios.post(`http://localhost:8080/api/question-categories/${courseId}`,questionCategory)
+    if(response.data.questionCategoryId){
+        message.success("created successfuly",1)
+    }
+}
     const CourseColumns = [
       {
           key: 1,
@@ -251,6 +272,7 @@ const resetVideoUpload =() =>{
     <Button  onClick={()=>{handeIsTopic(record)}} icon={< EditOutlined/>}   style={{ color: "blue", marginLeft: 10, fontSize: 15 }}>Create Topic </Button>
     <Button  onClick={()=>{handleShowTopic(record)}} icon={< DownCircleOutlined />}   style={{ color: "blue", marginLeft: 10, fontSize: 15}}>Show Topic </Button>
     <Button  onClick={()=>{handleHideTopic(record)}} icon={<UpCircleOutlined />}   style={{ color: "blue", marginLeft: 10, fontSize: 15}}>Show Hide </Button>
+    
 </>
 ): <>  <Button  icon={<UpCircleOutlined />}   style={{ color: "blue", marginLeft: 10, fontSize: 15}}>Show</Button> </>
                  
@@ -400,9 +422,8 @@ const MaterialColumns = [
           </label>
 
           <Input placeholder='Enter Course Name'
-            style={{ marginTop: 10,padding: 10}}
+            style={{ marginTop: "10px",padding: "10px"}}
             value={course?.courseName}
-            allowClear
             onChange={(e) => {
               setCourse((pre) => {
                return { ...pre, courseName: e.target.value };
