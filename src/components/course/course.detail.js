@@ -47,19 +47,21 @@ const CourseDetail = () =>  {
   
 
  return(
-     <>
+     <div className='wrapper'>
      <div className='course-title'>
-      <h2><span style={{color:"blue",marginRight:10}}> Course Name</span>{course?.courseName}</h2>
+      <h2><span style={{color:"blue",marginRight:10}}> Course Name:</span>{course?.courseName}</h2>
       <h1> Course Objective</h1>
      </div>
      <div className='course-objective'>
   {course?.objective}
      </div>
+     <div className='table-content'>
+       <h2 style={{textAlign:"center",fontWeight:"700",fontSize:"20px", marginTop:"10px"}}> Course Topics</h2>
      {
        course?.topics.map(topic =>(
         
-<div className='table-content'>
-      <Card title={topic.topicName}  >
+
+      <Card title={topic.topicName}  headStyle ={{fontWeight:"700",fontSize:"20px"}} >
 
       <Collapse accordion>
      {topic.materials.map(material=>(
@@ -83,21 +85,25 @@ const CourseDetail = () =>  {
           
       </Card>
 
-     </div>
+   
        ))
      }
+       </div>
      
      <div className='course-requirement' >
-        {course?.requirements}
+       <h2 style={{textDecoration:"underline", fontSize:"18px", fontWeight:"700"}} > Course requirement</h2>
+      <p style={{fontSize:"18px"}}> {course?.requirements}</p> 
      </div>
      <div className='description'>
-  {course?.description}
+       <h2 style={{textDecoration:"underline", fontSize:"18px", fontWeight:"700"}}> Course Description</h2>
+       <p>  {course?.description} </p>
+ 
      </div>
      <div className='comment'>
 
      </div>
      
-     </>
+     </div>
  )
 }
  
