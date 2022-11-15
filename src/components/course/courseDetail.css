@@ -1,8 +1,16 @@
+
+.wrapper{
+    border: 1px solid #cccbc4;
+    margin: 20px auto;
+}
+
 .course-title{
 
   background: #fff;
-
+border-bottom: 2px solid #cccbc4;
   margin: 10px 20px;
+  font-weight: 700;
+  font-size: 20px;
 }
 .course-objective{
 
@@ -13,6 +21,7 @@
 }
 .table-content{
     margin: 10px 5%;
+    border: 2px solid #b2b3e7;
 
 }
 .video-link{
