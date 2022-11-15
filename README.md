@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# CourseWare Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> The user interface of online course ware management system is a single page web application, it has been designed and implemented by React JS. The developed single paged application has high performance and great interactivity. This paper adopts REST API design in the back-end and the single page React web application user interface consume the end point by sending request using Axios JS request methods. Also, this single page web application use Ant design (AntD) React JS package to build interface components like modal and form for data entry and table to display data. This paper uses Redux as state management tools and manage the state of the application on the user interface.
 
-## Available Scripts
+# [Project documanetation](https://docs.google.com/document/d/13uvyCXNOyBhPa33Eg97p3rrr4Sm06d9s/edit?usp=sharing&ouid=112092182286642653827&rtpof=true&sd=true)
 
-In the project directory, you can run:
+# [Back-end repo](https://github.com/worashf/online-course-ware-backed)
 
-### `npm start`
+# Home page screen navigation flow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![screenshot](/public/images/home-page-screen-flow.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Teacher user interface screen navigation flow
 
-### `npm test`
+![screenshot](/public/images/teacher-pahges-screen.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Student page user interface navigation flow
 
-### `npm run build`
+![screenshot](/public/images/student-pages-screen.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Author user interface registration page flow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![screenshot](/public/images/author-pages.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Course material authoring or publishing page flow
 
-### `npm run eject`
+![screenshot](/public/images/course--matreial.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Course Material Presentation flow
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![screenshot](/public/images/material-presentation.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Built With
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ReactJs
+- Redux
+- AntDesign
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To get the copy of this project in your computer,clone this repository or just download it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- Code editor like vs code
+- node js installed
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Setup
 
-### Analyzing the Bundle Size
+- Download or clone the repository
+- Open the folder in your IDE
+- Install the dependencies
+- Run the app by "npm start"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+👤 **Worash**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@githubhandle](https://github.com/worashf)
+- Twitter: [@twitterhandle](https://twitter.com/WorashAboche)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/worash-abocherugn-a02219154/)
 
-### Advanced Configuration
+## Online Demo version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Link(##)]
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions, issues, and feature requests are welcome!
 
-### `npm run build` fails to minify
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
