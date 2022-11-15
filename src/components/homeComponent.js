@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const card_css= {
- "width":"300px",
- "marginLeft":"20px",
- "border":"2px solid #f5ecd7",
- "marginTop":"10px"
+ "width":"80%",
+  
+ "border":"2px solid #818a75",
+ "margin":"20px auto",
+ 
 }
 
 const token =localStorage.getItem("token");
@@ -38,22 +39,27 @@ return courses.map(course => {
   }
  
     return (
-      <Row key ={courseId}>
+     
+     
+        <Row key ={courseId}>
+      
       <Col span={24}>
         <Link to ={`/course-detail/${courseId}`}>
       <Card style ={card_css}
       hoverable
-      
-      cover={ course.thumbnail && <img src ={`http://localhost:8080/api/courses/image/${course.courseId}`} alt =""/>}
+      title={`Course Name: ${course.courseName}`}
+      cover={ course.thumbnail && <img src ={`http://localhost:8080/api/courses/image/${course.courseId}`} alt ="course thumbnail" style={{height:"300px",width:"100%"}}/>}
     > 
-        <Meta title={course.courseName}  />
-    
-    
+     
+     <h2> Course Description</h2>
+     <p> {course.description}</p>
     </Card>
     </Link>
       </Col>
     
     </Row>
+  
+  
     )
 })
 
@@ -65,7 +71,7 @@ return courses.map(course => {
 
   return(
 <>  
-<h1> image</h1>
+<h2 style={{fontSize:"20px", textAlign:"center",fontWeight:"700"}}> Top Courses</h2>
 
 
 {
