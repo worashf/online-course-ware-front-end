@@ -31,8 +31,8 @@ const NavBar = () => {
             <Menu.Item key="user" className="menu-item" icon ={<UpCircleOutlined  style={ {color:"#fff",fontSize:20}} />}>
             <Link to="/user"  className="menu-link" >Your Course</Link>
             </Menu.Item>
-            <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
-            <Link to="/user"  className="menu-link" >Question</Link>
+            <Menu.Item key="question" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
+            <Link to="/question"  className="menu-link" >Question</Link>
             </Menu.Item>
             <Menu.Item key="user" className="menu-item" icon ={<UserAddOutlined style={ {color:"#fff",fontSize:20}} />}>
             <Link to="/user"  className="menu-link" >Assesment</Link>
